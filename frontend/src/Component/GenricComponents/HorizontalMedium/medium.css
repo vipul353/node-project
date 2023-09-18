@@ -1,0 +1,57 @@
+.medi-main{
+    height: 36rem;
+    width: 36.5rem;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.medi-colm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.medi-img{
+    height: 20rem;
+    width: 36.5rem;
+}
+
+.medi-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.medi-titlle{
+    /* font: normal normal medium 26px/35px Montserrat; */
+    font-size: 2.6rem;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    width: 78%;
+}
+
+.number{
+    font-size: 9.4rem;
+    color: #F0F0F0;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: normal;
+    display: block;
+   
+}
+
+@media screen and (max-width:425px) {
+    .medi-main{
+        height: 46rem;
+        width: 100%;
+    }
+
+    .medi-img{
+        height: 30rem;
+        width: 100%;
+    }
+}
+

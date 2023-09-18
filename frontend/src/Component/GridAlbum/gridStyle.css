@@ -1,0 +1,55 @@
+.main-grd{
+    padding-inline: 12.0rem;
+    width: 100%;
+    padding-block: 1.7rem;
+    overflow: hidden;
+    display: block;
+}
+
+.alb-rw{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.vr-alb-cl{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bg-img{
+    border-radius: 20px;
+    height: 40rem;
+    margin-right: 1.0rem;
+    width: 71rem;
+    overflow: hidden;
+}
+
+.sm-img{
+    border-radius: 20px;
+    height: 18.5rem;
+    margin-bottom: 2.0rem;
+    width: 37.0rem;
+    overflow: hidden;
+}
+
+
+@media screen and (max-width:425px) {
+    .main-grd{
+       display: none;
+    }
+
+
+}
+
+
+@media screen and (max-width:915px) {
+    .main-grd{
+       display: none;
+    }
+
+
+}

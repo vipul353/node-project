@@ -1,0 +1,84 @@
+.main-ver-cards{
+    height: 45.2rem;
+    width: 31.8rem;
+    background-color: #FCFCFC;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crd-img{
+    width: 100%;
+    height: 20.0rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.crd-txt{
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0rem;
+}
+/* font: normal normal medium 32px/39px Montserrat; */
+.crd-txt-heading{
+    font-size: 2.2rem;
+    color: #404040;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+/* font: normal normal normal 17px/23px Open Sans; */
+.crd-txt-subtitle{
+    font-size: 1.7rem;
+    color: #908D8D;
+    font-weight: normal;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+.crd-rw{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+/* font: normal normal medium 17px/20px Montserrat; */
+.news-sub{
+    color: #404040;
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    padding-right: 1.0rem;
+}
+
+.new-date{
+    color: #b3aaaa;
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+@media screen and (max-width:425px) {
+    .main-ver-cards{
+        height: 53.2rem;
+        width: 100%;
+    }
+
+    .crd-img{
+        width: 100%;
+        height: 32rem;
+    }
+    .crd-txt{
+        gap: 1rem;
+    }
+
+    
+}

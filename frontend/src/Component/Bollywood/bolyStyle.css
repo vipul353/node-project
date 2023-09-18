@@ -1,0 +1,50 @@
+.BolyMain{
+    padding-inline: 12.0rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3.0rem;
+    padding-top: 4.0rem;
+}
+
+.bolyColm-one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* gap: 3.0rem; */
+    width: 60%;
+}
+
+.bolyColm-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* gap: 3.0rem; */
+    width: 37%;
+}
+
+@media screen and (max-width:425px) {
+    .BolyMain{
+        padding-inline: 0rem;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3.0rem;
+        padding-top: 4.0rem;
+    }
+
+    .bolyColm-one{
+        width: auto;
+    }
+
+    .bolyColm-two{
+        width: auto;
+        align-items: center;
+    }
+    
+  }

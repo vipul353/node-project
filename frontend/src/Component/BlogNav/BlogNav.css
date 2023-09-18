@@ -1,0 +1,53 @@
+.Blog-nav-main{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 12.0rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.Blog-nav-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .Blog-nav-title-the {
+    transform: rotate(90deg);
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+  }
+  
+  .Blog-nav-title-siren{
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 6.2rem;
+      letter-spacing: 0px;
+      color: #000000;
+  }
+
+  .button{
+    height: 4.4rem;
+    width: 13.4rem;
+    border: 1px solid #03A87C;
+    color: #03A87C;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+    background-color: white;
+  }
+
+  @media screen and (max-width:425px) {
+    .Blog-nav-main{
+      padding-inline: 3rem;
+    }
+  }

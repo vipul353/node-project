@@ -1,0 +1,80 @@
+.hariMain{
+    height: 23rem;
+    width: 64rem;
+    background-color: #FFFFFF;
+    border-top: 3px solid #F0F0F0;
+    overflow: hidden;
+}
+
+.main-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 3.0rem; */
+}
+
+.hari-rw{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+.hari-image{
+    height: 16rem;
+    width: 49rem;
+    overflow: hidden;
+}
+
+.hari-image img{
+    width: 100%;
+    height: auto;
+}
+
+.hari-clm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.hari-txt{
+    /* font: normal normal medium 40px/45px Montserrat; */
+    font-size: 2.6rem;
+    font-weight: normal;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+.hari-sub{
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #908D8D;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.crd-rw{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding-top: 1.5rem; */
+}
+
+.news-sub{
+    color: #404040;
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    padding-right: 1.0rem;
+}
+
+.new-date{
+    color: #b3aaaa;
+    font-size: 1.7rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
