@@ -1,7 +1,9 @@
 const express = require('express');
 const Data = require('./Data/data');
 const router = require('./routers/AllRouters');
+const cors = require('cors');
 const app = express()
+app.use(cors())
 app.get('/',(req,res)=>{
 res.send('app is running')
 })

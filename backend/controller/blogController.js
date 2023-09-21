@@ -1,6 +1,7 @@
 const bollywood = require("../Data/BolllyWoodData");
 const hollywood = require("../Data/hollywoodData");
 const technology = require("../Data/technologyData");
+const fitness = require('../Data/fittness');
 const latest = require("../Data/latest");
 const Food = require("../Data/Food");
 
@@ -18,7 +19,7 @@ const technologyController = (req,res)=>{
 
 
 const fittnessController = (req,res)=>{
-    res.send(technology);
+    res.send(fitness);
 }
 
 const latestController = (req,res)=>{
