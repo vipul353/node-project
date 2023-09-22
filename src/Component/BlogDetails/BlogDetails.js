@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { contextApi } from "../../App";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const BlogDetails = () => {
   // const {id} =
@@ -30,9 +31,19 @@ const BlogDetails = () => {
 
   useEffect(
     () => {
+      axios.get('https://blog-backend-gnft.onrender.com/api/allData')
+      .then((item)=>{
+        setMainData(item.data.find((item) => item.id == id));
+        getRandomObjectsFromArray(item.data, 3);
+        // setFood(item.data)
+        //  console.log("this is the value====>",allData);
+      }).catch((erorr)=>{
+        console.log(erorr);
+      })
       // eslint-disable-next-line
-      setMainData(data.find((item) => item.id == id));
-      getRandomObjectsFromArray(data, 3);
+      
+      // setMainData(data.find((item) => item.id == id));
+      // getRandomObjectsFromArray(data, 3);
       top.current.scrollIntoView({
         behavior: "smooth",
         block: "start",

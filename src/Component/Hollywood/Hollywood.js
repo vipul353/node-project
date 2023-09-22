@@ -4,23 +4,41 @@ import HorizontalCards from '../GenricComponents/HorizontalCards/HorizontalCards
 import HorizontalSmall from '../GenricComponents/HorizontalSmall/HorizontalSmall'
 import Horizontalmedium from '../GenricComponents/HorizontalMedium/Horizontalmedium'
 import AllAdes from '../GenricComponents/AllAdes'
-import { contextApi } from '../../App'
-import { useContext } from 'react'
+// import { contextApi } from '../../App'
+import { useState,useEffect } from 'react'
 import Navbar from '../NavBar/Navbar'
+import axios from 'axios'
+
 const Hollywood = () => {
-  const data = useContext(contextApi)
+  // const data = useContext(contextApi)
+  const [hollywood,setHollywood]  = useState([])
+  useEffect(
+    ()=>{
+      axios.get('https://blog-backend-gnft.onrender.com/api/hollywood')
+      .then((item)=>{
+
+        setHollywood(item.data)
+        //  console.log("this is the value====>",allData);
+      }).catch((erorr)=>{
+        console.log(erorr);
+      })
+
+    },
+    // eslint-disable-next-line
+    []
+  )
   return (
 <>
 <Navbar/>
 <div className="BolyMain">
     <div className="bolyColm-one">
      <Titles title={'Hollywood'}/>
-     {data.map((item, index) => {
-          if (item.cat === "hollywood" && index >= 12 && index <= 18) {
+     {hollywood.map((item, index) => {
+          if (item.cat === "hollywood" && item.id  >= 12 && item.id  <= 18) {
             return (
               <HorizontalCards
                 key={index}
-                index={index}
+                index={item.id}
                 title={item.Heading}
                 image={item.image}
                 description={item.Description}
@@ -35,18 +53,18 @@ const Hollywood = () => {
     </div>
     <div className="bolyColm-two">
       <Titles title={'Top Posts'}/>
-      {data.map((item, index) => {
+      {hollywood.map((item, index) => {
           console.log();
-          if (item.cat === "hollywood" && index >= 18 && index <= 23) {
+          if (item.cat === "hollywood" && item.id  >= 18 && item.id  <= 23) {
             return (
               <>
                 {
-                  (index === 19)&& <Horizontalmedium cat={item.cat} image={item.image} index={index} title={item.Heading}/>
+                  (item.id  === 19)&& <Horizontalmedium cat={item.cat} image={item.image} index={item.id} title={item.Heading}/>
                 }
-               { (index >= 20 && index <= 23)&&<HorizontalSmall
+               { (item.id  >= 20 && item.id  <= 23)&&<HorizontalSmall
                   key={index}
                   title={item.Heading}
-                  index={index}
+                  index={item.id}
                   image={item.image}
                   cat={item.cat}
                 />}

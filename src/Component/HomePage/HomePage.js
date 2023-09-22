@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React, {useEffect, useState } from "react";
 import "./Home.css";
 import GridAlbum from "../GridAlbum/GridAlbum";
 import BigCards from "../GenricComponents/VerticalCards/BigCards";
 import HorizontalCards from "../GenricComponents/HorizontalCards/HorizontalCards";
 import HorizontalSmall from "../GenricComponents/HorizontalSmall/HorizontalSmall";
 import bgImage from "../Assets/bg-image.jpg";
-import { contextApi } from "../../App";
+// import { contextApi } from "../../App";
 import Navbar from "../NavBar/Navbar";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const Titles = ({ title }) => {
   return (
@@ -41,8 +42,25 @@ const LastBoxes = ({index,isBorder,title,desc,cat}) => {
 };
 
 const HomePage = () => {
-  const data = useContext(contextApi)
-  console.log(data);
+  // const data = useContext(contextApi)
+  const [allData,setAllData]  = useState([])
+  useEffect(
+    ()=>{
+      axios.get('https://blog-backend-gnft.onrender.com/api/allData')
+      .then((item)=>{
+
+        setAllData(item.data)
+         console.log("this is the value====>",allData);
+      }).catch((erorr)=>{
+        console.log(erorr);
+      })
+
+    },
+    // eslint-disable-next-line
+    []
+  )
+
+  // console.log(data);
   return (
     <>
      <Navbar />
@@ -51,11 +69,11 @@ const HomePage = () => {
         <Titles title={"The Latest"} />
         <div className="home-row">
           {
-            data.map((item,index)=>{
+            allData.map((item,index)=>{
               if (item.cat === 'Latest') {
                 return(
                   <>
-                   <BigCards key={index} index={index} title={item.heading} image={item.image} description={item.description} cat={item.cat} />
+                   <BigCards key={index} index={item.id} title={item.heading} image={item.image} description={item.description} cat={item.cat} />
                   </>
                 )
               }else return(
@@ -70,10 +88,10 @@ const HomePage = () => {
           <div className="home-row">
             <div className="home-clm-main">
               {
-                data.map((item,index)=>{
+                allData.map((item,index)=>{
                    if ((item.cat === 'technology')&&((index>24)&&(index<29))) {
                     return(
-                      <HorizontalCards key={index} index={index} title={item.Heading} image={item.image} description={item.Description} cat={item.cat} />
+                      <HorizontalCards key={index} index={item.id} title={item.Heading} image={item.image} description={item.Description} cat={item.cat} />
                     )
                    } else {
                     return(
@@ -93,11 +111,11 @@ const HomePage = () => {
                 <img style={{height:'100%',width:'100%',overflow:'hidden'}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXz2SENaXMYUf3Ru2X76ufRjx3G9BI_Bj5sA&usqp=CAU'  alt="no data"/>
               </div>
               {
-                data.map((item,index)=>{
-                  console.log();
+                allData.map((item,index)=>{
+                  // console.log();
                    if ((item.cat === 'Food')&&((index>52)&&(index<57))) {
                     return(
-                      <HorizontalSmall key={index} title={item.heading} index={index} image={item.image} cat={item.cat} />
+                      <HorizontalSmall key={index} title={item.heading} index={item.id} image={item.image} cat={item.cat} />
                     )
                    } else {
                     return(
@@ -117,13 +135,13 @@ const HomePage = () => {
         <Titles title={"Latest Stories"} />
         <div className="last-box">
         {
-                data.map((item,index)=>{
-                  console.log();
+                allData.map((item,index)=>{
+                  // console.log();
                    if ((item.cat === 'bollywood')&&((index>=0)&&(index<=2))) {
                     return(
                    <>
                     {
-                      <LastBoxes index={index} isBorder={true} cat={item.cat} desc={item.description} title={item.heading} />
+                      <LastBoxes index={item.id} isBorder={true} cat={item.cat} desc={item.description} title={item.heading} />
                     }
                    </>
                     )
