@@ -8,8 +8,8 @@ import twitter from "../Assets/twitter.svg";
 import youtube from "../Assets/youtube.svg";
 import clap from "../Assets/rythm.png";
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { contextApi } from "../../App";
+// import { useContext } from "react";
+// import { contextApi } from "../../App";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -27,12 +27,13 @@ const BlogDetails = () => {
     setBottom(k);
   }
 
-  const data = [...useContext(contextApi)];
+  // const data = [...useContext(contextApi)];
 
   useEffect(
     () => {
       axios.get('https://blog-backend-gnft.onrender.com/api/allData')
       .then((item)=>{
+          // eslint-disable-next-line
         setMainData(item.data.find((item) => item.id == id));
         getRandomObjectsFromArray(item.data, 3);
         // setFood(item.data)
