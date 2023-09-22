@@ -58,7 +58,7 @@ const Food = () => {
             if (item.cat === "Food" && item.id  >= 59 && item.id  <= 63) {
               return (
                 <>
-                  {index === 59 && (
+                  {item.id === 59 && (
                     <Horizontalmedium
                       cat={item.cat}
                       image={item.image}
