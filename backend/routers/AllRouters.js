@@ -5,7 +5,8 @@ const {
     technologyController,
     fittnessController,
     latestController,
-    FoodController
+    FoodController,
+    AllData
 } = require('../controller/blogController');
 
 
@@ -18,6 +19,7 @@ const router  = Router();
  router.get('/fitness',fittnessController);
  router.get('/latest',latestController);
  router.get('/food',FoodController);
+ router.get('/allData',AllData);
 
 
 module.exports =router

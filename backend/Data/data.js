@@ -649,6 +649,34 @@ const Data = [
         "Elevate your fitness journey with our cutting-edge fitness trackers, providing real-time insights and motivation.",
       cat: "Food",
     },
+    {
+      id: 64,
+      heading: "Kashmir: A Land of Natural Beauty and Complex Geopolitical Issues - Explore Its Rich History.",
+      image2:"https://c4.wallpaperflare.com/wallpaper/206/172/990/banana-stalker-wallpaper-preview.jpg",
+      image: "https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg",
+      description:
+        "Peaceful negotiations in Kashmir result in historic agreement, promising a brighter future for the region.",
+      cat: "Top News",
+    },
+    {
+      id: 65,
+      heading: "Ganesh Chaturthi: Celebrating the Arrival of the Elephant-Headed God with Joy and Devotion.",
+      image2:"https://c4.wallpaperflare.com/wallpaper/733/298/327/minimalism-digital-art-humor-simple-background-wallpaper-preview.jpg",
+      image: "https://images.pexels.com/photos/5949177/pexels-photo-5949177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description:
+        "Ganesh Chaturthi is a Hindu festival celebrating the birth of Lord Ganesha, featuring idol installations and rituals.",
+      cat: "Top News",
+    },
+    {
+      id: 66,
+      heading: "Fresh Salad Delights: Discover a Medley of Flavors and Health Benefits on Your Plate.",
+      image2:"https://c4.wallpaperflare.com/wallpaper/317/415/751/monkey-holding-a-banana-monkey-holding-yellow-banana-illustration-wallpaper-preview.jpg",
+      image: "https://images.pexels.com/photos/406152/pexels-photo-406152.jpeg?auto=compress&cs=tinysrgb&w=600",
+      description:
+        "Salad: Fresh mix of veggies, fruits, and dressings; healthy, versatile, and enjoyed as appetizer or main..",
+      cat: "Top News",
+    },
+
   ];
   
  module.exports = Data;
