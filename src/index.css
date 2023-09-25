@@ -18,6 +18,16 @@ body {
 
 
 
+
+@media screen and (max-width:1024px) {
+
+  html{
+    font-size: 47.5%;
+  }
+  
+}
+
+
 @media screen and (max-width:915px) {
 
   html{

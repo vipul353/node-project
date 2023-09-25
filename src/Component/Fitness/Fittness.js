@@ -4,23 +4,28 @@ import HorizontalCards from "../GenricComponents/HorizontalCards/HorizontalCards
 import HorizontalSmall from "../GenricComponents/HorizontalSmall/HorizontalSmall";
 import Horizontalmedium from "../GenricComponents/HorizontalMedium/Horizontalmedium";
 import AllAdes from "../GenricComponents/AllAdes";
-// import { useContext } from 'react'
-// import { contextApi } from "../../App";
 import Navbar from "../NavBar/Navbar";
 import axios from "axios";
+import Loader from "../GenricComponents/Loader/Loader";
 
 const Fittness = () => {
   // const data = useContext(contextApi);
   const [fittness,seFittness]  = useState([])
+  const [isDataLoaded,setIsDataloaded] = useState(false)
   useEffect(
     ()=>{
       axios.get('https://blog-backend-gnft.onrender.com/api/fitness')
       .then((item)=>{
 
-        seFittness(item.data)
+       if (item.status === 200) {
+          setIsDataloaded(true)
+          seFittness(item.data)
+       }
+
         //  console.log("this is the value====>",allData);
       }).catch((erorr)=>{
         console.log(erorr);
+        setIsDataloaded(true)
       })
 
     },
@@ -30,7 +35,8 @@ const Fittness = () => {
   return (
     <>
       <Navbar />
-      <div className="BolyMain">
+      {
+        isDataLoaded?  <div className="BolyMain">
         <div className="bolyColm-one">
           <Titles title={"Fittness"} />
           {fittness.map((item, index) => {
@@ -83,7 +89,8 @@ const Fittness = () => {
           })}
           <AllAdes />
         </div>
-      </div>
+      </div>:<Loader/>
+      }
     </>
   );
 };

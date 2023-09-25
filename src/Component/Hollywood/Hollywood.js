@@ -8,19 +8,25 @@ import AllAdes from '../GenricComponents/AllAdes'
 import { useState,useEffect } from 'react'
 import Navbar from '../NavBar/Navbar'
 import axios from 'axios'
+import Loader from '../GenricComponents/Loader/Loader'
 
 const Hollywood = () => {
   // const data = useContext(contextApi)
   const [hollywood,setHollywood]  = useState([])
+  const [isDataLoaded,setIsDataloaded] = useState(false)
   useEffect(
     ()=>{
       axios.get('https://blog-backend-gnft.onrender.com/api/hollywood')
       .then((item)=>{
 
-        setHollywood(item.data)
+        if (item.status===200) {
+          setHollywood(item.data)
+          setIsDataloaded(true)
+        }
         //  console.log("this is the value====>",allData);
       }).catch((erorr)=>{
         console.log(erorr);
+        setIsDataloaded(true)
       })
 
     },
@@ -30,7 +36,8 @@ const Hollywood = () => {
   return (
 <>
 <Navbar/>
-<div className="BolyMain">
+  {
+    isDataLoaded?<div className="BolyMain">
     <div className="bolyColm-one">
      <Titles title={'Hollywood'}/>
      {hollywood.map((item, index) => {
@@ -76,7 +83,8 @@ const Hollywood = () => {
         })}
       <AllAdes/>
     </div>
-  </div>
+  </div>:<Loader/>
+  }
 </>
   )
 }

@@ -8,19 +8,25 @@ import AllAdes from "../GenricComponents/AllAdes";
 // import { contextApi } from "../../App";
 import Navbar from "../NavBar/Navbar";
 import axios from "axios";
+import Loader from "../GenricComponents/Loader/Loader";
 
 const Bollywood = () => {
   // const data = useContext(contextApi);
   const [bollywoodData,setBollywoodData]  = useState([])
+  const [isdataLoaded,setIsDataloaded] = useState(false)
   useEffect(
     ()=>{
       axios.get('https://blog-backend-gnft.onrender.com/api/bollywood')
       .then((item)=>{
 
+       if (item.status === 200) {
         setBollywoodData(item.data)
+        setIsDataloaded(true)
+       }
         //  console.log("this is the value====>",allData);
       }).catch((erorr)=>{
         console.log(erorr);
+        setIsDataloaded(true)
       })
 
     },
@@ -31,7 +37,8 @@ const Bollywood = () => {
   return (
    <>
    <Navbar/>
-   <div className="BolyMain">
+     {
+      isdataLoaded?<div className="BolyMain">
       <div className="bolyColm-one">
         <Titles title={"Bollywood"} />
         {bollywoodData.map((item, index) => {
@@ -82,7 +89,8 @@ const Bollywood = () => {
         <HorizontalSmall/> */}
         <AllAdes />
       </div>
-    </div>
+    </div>:<Loader/>
+     }
    </>
   );
 };

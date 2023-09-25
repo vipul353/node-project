@@ -8,19 +8,25 @@ import {useState,useEffect } from "react";
 // import { contextApi } from "../../App";
 import Navbar from "../NavBar/Navbar";
 import axios from "axios";
+import Loader from "../GenricComponents/Loader/Loader";
 
 const Technology = () => {
   // const data = useContext(contextApi);
   const [techno,setTechno]  = useState([])
+  const [isDataLoaded,setIsDataloaded] = useState(false)
   useEffect(
     ()=>{
       axios.get('https://blog-backend-gnft.onrender.com/api/technology')
       .then((item)=>{
-         console.log(item.data);
-        setTechno(item.data)
+         if (item.status===200) {
+          console.log(item.data);
+          setIsDataloaded(true)
+          setTechno(item.data)
+         }
         //  console.log("this is the value====>",allData);
       }).catch((erorr)=>{
         console.log(erorr);
+        setIsDataloaded(true)
       })
 
     },
@@ -30,7 +36,8 @@ const Technology = () => {
   return (
     <>
       <Navbar />
-      <div className="BolyMain">
+      {
+        isDataLoaded?  <div className="BolyMain">
         <div className="bolyColm-one">
           <Titles title={"Technology"} />
           {techno.map((item, index) => {
@@ -83,7 +90,8 @@ const Technology = () => {
           })}
           <AllAdes />
         </div>
-      </div>
+      </div>:<Loader/>
+      }
     </>
   );
 };
