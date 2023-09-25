@@ -97,4 +97,10 @@
         align-items: start-flex;
         gap: 2.5rem;
     }
+    .hori-rw{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.0rem;
+    }
 }
