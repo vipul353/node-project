@@ -79,7 +79,7 @@ const Technology = () => {
                       title={item.Heading}
                       index={item.id}
                       image={item.image}
-                      cat={item.cat}
+                      cat={"techno.."}
                     />
                   )}
                 </>

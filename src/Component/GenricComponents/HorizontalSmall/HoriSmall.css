@@ -9,7 +9,7 @@
 .hori-rw{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.0rem;
 }
 
@@ -24,6 +24,7 @@
     justify-content: flex-start;
     align-items: start-flex;
     gap: 0rem;
+    width: auto;
     /* gap: 2.5rem; */
 }
 
@@ -96,11 +97,12 @@
         justify-content: flex-start;
         align-items: start-flex;
         gap: 2.5rem;
+        width: 40%;
     }
     .hori-rw{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.0rem;
     }
 }

@@ -48,7 +48,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 1.5rem;
+    /* padding-top: 1.5rem; */
 }
 /* font: normal normal medium 17px/20px Montserrat; */
 .news-sub{
